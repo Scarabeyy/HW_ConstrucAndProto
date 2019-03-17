@@ -38,18 +38,19 @@
             }
         }
         //сво-ство функции конструктора
-        Cat.MaxAge = 20;
+        Cat.prototype.MaxAge = 20;
         //Метод функции конструктора
-        Cat.resetCat = function(){
+        Cat.prototype.resetCat = function(){
             return new Cat(0,0,0);
         }
         //Использование
         var Barsik = new Cat("Barsik",6,"black");
         var Thomas = new Cat("Thomas",4,"red");
+        var Murka = new Cat("Murka",2,"gray");
         Barsik.print();
         document.write("</br>")
         Thomas.print();
-
+        console.log(Barsik.MaxAge)
         Barsik.resetCat().print();
     </script>
 </head>

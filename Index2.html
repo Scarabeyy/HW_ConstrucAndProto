@@ -40,11 +40,13 @@
         var David = new Human ("David",24);
         var Tom = new Human ("Tom",30);
         var Mike = new Human ("Mike",38);
-        var HumanAgeArr = [David.age, Tom.age, Mike.age];
+        var HumanAgeArr = [David, Tom, Mike];
 
         var sortByMax = function(){
              HumanAgeArr.sort(function(a,b){
-                 return a-b;
+                 var c = a.age;
+                 var d = b.age;
+                 return c-d;
              })
              document.write("Сортировка по возрастанию " + "</br>" + HumanAgeArr);
          };
@@ -52,9 +54,11 @@
 
         var sortByMin = function(){
              HumanAgeArr.sort(function(a,b){
-                 return b-a;
+                var c = a.age;
+                var d = b.age;
+                 return d-c;
              })
-             document.write("Сортировка по Убыванию " + "</br>" + HumanAgeArr);
+             document.write(" </br> Сортировка по Убыванию " + "</br>" + HumanAgeArr);
          };
          sortByMin ();
 
@@ -73,8 +77,8 @@
                 document.write("My weight is "+weight+"</br>");
              }
 
-             Human1.MaxWeight = 120;
-             Human1.DeletHum = function(){
+             Human1.prototype.MaxWeight = 120;
+             Human1.prototype.deletHum = function(){
                  return new Human1("",0,"","",0,0);
              }  
          }
