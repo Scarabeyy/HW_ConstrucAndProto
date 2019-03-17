@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*Задание 1
+    создайте функцию конструктор, которая создает обьект со свйоством
+    экземпляра, свойством функции-конструктора, с методом экземпляра
+    и методом функции-конструктора. Имена произвольно
+    
+    Задание 2
+    Разработайте функцию-конструктор, которая будет создавать обьект
+    Human(человек). Создайте массив обьектов и реализуйте функцию ,
+    которая будет сортировать элементы массива по значению свойства
+    Age по возрастанию или по убыванию
+    
+    Задание 3 
+    Разработайте функцию-конструктор, которая будет создавать Human(человек)
+    добавьте на свое усмотрения свойства и метода в этот обьектр. Подумайте,
+    какие методы и свойства следует сделать уровня экземпляра,а какие 
+    уровня функции-конструктора.
+    
+    Задание 4
+    Создайте пример демонстрирующий назначение метода toString()*/
+    
+        //Задание 2
+        function Human (name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // Снизу пример демонстирирующий назначение метода toString
+        Human.prototype.toString = function(){
+            return "Меня зову " + this.name + " мой возраст "+this.age;
+        }
+
+        
+        var David = new Human ("David",24);
+        var Tom = new Human ("Tom",30);
+        var Mike = new Human ("Mike",38);
+        var HumanAgeArr = [David.age, Tom.age, Mike.age];
+
+        var sortByMax = function(){
+             HumanAgeArr.sort(function(a,b){
+                 return a-b;
+             })
+             document.write("Сортировка по возрастанию " + "</br>" + HumanAgeArr);
+         };
+         sortByMax();
+
+        var sortByMin = function(){
+             HumanAgeArr.sort(function(a,b){
+                 return b-a;
+             })
+             document.write("Сортировка по Убыванию " + "</br>" + HumanAgeArr);
+         };
+         sortByMin ();
+
+         //Задание 3
+         function Human1 (name, age, work, growth, weight){
+             this.name = name;
+             this.age = age;
+             this.work = work;
+             this.growth = growth;
+             this.weight = weight;
+             this.print = function(){
+                document.write("My name is "+name+"</br>");
+                document.write("My age is "+age+"</br>");
+                document.write("I work in "+work+"</br>");
+                document.write("My growth is "+growth+"</br>");
+                document.write("My weight is "+weight+"</br>");
+             }
+
+             Human1.MaxWeight = 120;
+             Human1.DeletHum = function(){
+                 return new Human1("",0,"","",0,0);
+             }  
+         }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*Задание 1
+    создайте функцию конструктор, которая создает обьект со свйоством
+    экземпляра, свойством функции-конструктора, с методом экземпляра
+    и методом функции-конструктора. Имена произвольно
+    
+    Задание 2
+    Разработайте функцию-конструктор, которая будет создавать обьект
+    Human(человек). Создайте массив обьектов и реализуйте функцию ,
+    которая будет сортировать элементы массива по значению свойства
+    Age по возрастанию или по убыванию
+    
+    Задание 3 
+    Разработайте функцию-конструктор, которая будет создавать Human(человек)
+    добавьте на свое усмотрения свойства и метода в этот обьектр. Подумайте,
+    какие методы и свойства следует сделать уровня экземпляра,а какие 
+    уровня функции-конструктора.
+    
+    Задание 4
+    Создайте пример демонстрирующий назначение метода toString()*/
+    
+    //Задание 1
+        function Cat(name,age,color){ //Функция конструктор?
+            //свой-ва экземляров
+            this.name = name;
+            this.age = age;
+            this.color = color;
+            //метод Экземляра
+            this.print = function(){
+                document.write("cat name "+this.name+" cat age "+this.age+" cat color "+this.color);
+            }
+        }
+        //сво-ство функции конструктора
+        Cat.MaxAge = 20;
+        //Метод функции конструктора
+        Cat.resetCat = function(){
+            return new Cat(0,0,0);
+        }
+        //Использование
+        var Barsik = new Cat("Barsik",6,"black");
+        var Thomas = new Cat("Thomas",4,"red");
+        Barsik.print();
+        document.write("</br>")
+        Thomas.print();
+
+        Barsik.resetCat().print();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
